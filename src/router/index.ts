@@ -7,6 +7,7 @@ import WorkFrequencyForm from "../components/WorkFrequencyForm.vue";
 import CompanyList from "../views/CompanyList.vue"; // Importe a nova view
 import TaskCategoryList from "../views/TaskCategoryList.vue"; // Importe a nova view
 import WorkFrequencyList from "../views/WorkFrequencyList.vue"; // Importe a nova view
+import EditCompany from "../views/EditCompany.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -43,6 +44,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/work-frequencies",
     name: "WorkFrequencyList",
     component: WorkFrequencyList,
+  },
+  {
+    path: "/company/edit/:id", // :id será o UUID da empresa
+    name: "EditCompany",
+    component: EditCompany,
   },
 ];
 
