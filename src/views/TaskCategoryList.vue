@@ -36,7 +36,7 @@ onMounted(async () => {
       "http://localhost:8080/api/tasks_categories"
     );
     taskCategories.value = response.data;
-  } catch (error: Error) {
+  } catch (error: any) {
     console.error("Erro ao buscar categorias:", error);
     // Adicione aqui um tratamento de erro para o usuário, se necessário
   } finally {
@@ -45,7 +45,7 @@ onMounted(async () => {
 });
 
 const goToEditTaskCategory = (id: string) => {
-  router.push("/tasks_categories/edit/${id}");
+  router.push(`/tasks_categories/edit/${id}`);
 };
 </script>
 

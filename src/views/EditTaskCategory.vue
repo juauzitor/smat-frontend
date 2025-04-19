@@ -66,15 +66,15 @@ const updateTaskCategory = async () => {
   loading.value = true;
   try {
     const response = await axios.put(
-      `http://localhost:8080/api/companies/${taskCategoryId.value}`,
+      `http://localhost:8080/api/tasks_categories/${taskCategoryId.value}`,
       {
         categoryName: categoryName.value,
       }
     );
-    responseMessage.value = `Empresa "${categoryName.value}" atualizada com sucesso! ID: ${response.data.taskCategoryId}`;
+    responseMessage.value = `Category "${response.data.categoryName}" atualizada com sucesso! ID: ${response.data.taskCategoryId}`;
     // Redirecionar para a lista após um breve período
     setTimeout(() => {
-      router.push("/companies");
+      router.push("/task-categories");
     }, 1500);
   } catch (error: any) {
     console.error("Erro ao atualizar empresa:", error);
