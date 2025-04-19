@@ -1,25 +1,35 @@
+// router/index.ts
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import CompanyForm from "../components/CompanyForm.vue";
+import TaskCategoryForm from "../components/TaskCategoryForm.vue";
+import WorkFrequencyForm from "../components/WorkFrequencyForm.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
+    name: "Home",
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/company-form",
+    name: "CompanyForm",
+    component: CompanyForm,
+  },
+  {
+    path: "/task-category-form",
+    name: "TaskCategoryForm",
+    component: TaskCategoryForm,
+  },
+  {
+    path: "/work-frequency-form",
+    name: "WorkFrequencyForm",
+    component: WorkFrequencyForm,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
