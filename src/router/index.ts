@@ -4,6 +4,9 @@ import HomeView from "../views/HomeView.vue";
 import CompanyForm from "../components/CompanyForm.vue";
 import TaskCategoryForm from "../components/TaskCategoryForm.vue";
 import WorkFrequencyForm from "../components/WorkFrequencyForm.vue";
+import CompanyList from "../views/CompanyList.vue"; // Importe a nova view
+import TaskCategoryList from "../views/TaskCategoryList.vue"; // Importe a nova view
+import WorkFrequencyList from "../views/WorkFrequencyList.vue"; // Importe a nova view
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -25,6 +28,21 @@ const routes: Array<RouteRecordRaw> = [
     path: "/work-frequency-form",
     name: "WorkFrequencyForm",
     component: WorkFrequencyForm,
+  },
+  {
+    path: "/companies",
+    name: "CompanyList",
+    component: CompanyList,
+  },
+  {
+    path: "/task-categories",
+    name: "TaskCategoryList",
+    component: TaskCategoryList,
+  },
+  {
+    path: "/work-frequencies",
+    name: "WorkFrequencyList",
+    component: WorkFrequencyList,
   },
 ];
 
