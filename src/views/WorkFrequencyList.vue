@@ -6,6 +6,9 @@
         ID: {{ frequency.workFrequencyId }} - Início:
         {{ formatDate(frequency.startWorkFrequency) }} - Fim:
         {{ formatDate(frequency.endWorkFrequency) }}
+        <button @click="goToEditWorkFrequency(frequency.workFrequencyId)">
+          Editar
+        </button>
       </li>
     </ul>
     <p v-else-if="loading">Carregando frequências...</p>
@@ -17,6 +20,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
 
 interface WorkFrequency {
   workFrequencyId: string;
@@ -26,6 +30,7 @@ interface WorkFrequency {
 
 const workFrequencies = ref<WorkFrequency[]>([]);
 const loading = ref(false);
+const router = useRouter();
 
 onMounted(async () => {
   loading.value = true;
@@ -34,7 +39,7 @@ onMounted(async () => {
       "http://localhost:8080/api/work_frequency"
     );
     workFrequencies.value = response.data;
-  } catch (error: Error) {
+  } catch (error: any) {
     console.error("Erro ao buscar frequências:", error);
     // Adicione aqui um tratamento de erro para o usuário, se necessário
   } finally {
@@ -46,16 +51,17 @@ const formatDate = (isoDate: string) => {
   const date = new Date(isoDate);
   return date.toLocaleDateString() + " " + date.toLocaleTimeString();
 };
+
+const goToEditWorkFrequency = (id: string) => {
+  router.push(`/work-frequencies/edit/${id}`);
+};
 </script>
 
 <style scoped>
 /* Estilos semelhantes às outras listas */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 8px;
+button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 </style>
