@@ -4,6 +4,9 @@
     <ul v-if="taskCategories.length > 0">
       <li v-for="category in taskCategories" :key="category.taskCategoryId">
         {{ category.categoryName }} (ID: {{ category.taskCategoryId }})
+        <button @click="goToEditTaskCategory(category.taskCategoryId)">
+          Editar
+        </button>
       </li>
     </ul>
     <p v-else-if="loading">Carregando categorias...</p>
@@ -15,6 +18,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
 
 interface TaskCategory {
   taskCategoryId: string;
@@ -23,6 +27,7 @@ interface TaskCategory {
 
 const taskCategories = ref<TaskCategory[]>([]);
 const loading = ref(false);
+const router = useRouter();
 
 onMounted(async () => {
   loading.value = true;
@@ -38,16 +43,17 @@ onMounted(async () => {
     loading.value = false;
   }
 });
+
+const goToEditTaskCategory = (id: string) => {
+  router.push("/tasks_categories/edit/${id}");
+};
 </script>
 
 <style scoped>
 /* Estilos semelhantes à CompanyList */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 8px;
+button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 </style>
