@@ -10,6 +10,9 @@ import WorkFrequencyList from "../views/WorkFrequencyList.vue"; // Importe a nov
 import EditCompany from "../views/EditCompany.vue";
 import EditTaskCategory from "../views/EditTaskCategory.vue";
 import EditWorkFrequency from "../views/EditWorkFrequency.vue";
+import TaskPerformedForm from "../components/TaskPerformedForm.vue";
+import TaskPerformedList from "../views/TaskPerformedList.vue";
+import EditTaskPerformed from "../views/EditTaskPerformed.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -61,6 +64,21 @@ const routes: Array<RouteRecordRaw> = [
     path: "/work-frequencies/edit/:id", // :id será o UUID da empresa
     name: "EditWorkFrequency",
     component: EditWorkFrequency,
+  },
+  {
+    path: "/task-performed/create",
+    name: "CreateTaskPerformed",
+    component: TaskPerformedForm,
+  },
+  {
+    path: "/task-performed/edit/:id",
+    name: "EditTaskPerformed",
+    component: EditTaskPerformed,
+  },
+  {
+    path: "/task-performed",
+    name: "TaskPerformedList",
+    component: TaskPerformedList,
   },
 ];
 

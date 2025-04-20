@@ -16,6 +16,11 @@
           >Formulário de Frequência de Trabalho</router-link
         >
       </li>
+      <li>
+        <router-link to="/task-performed/create"
+          >Formulário de tarefas</router-link
+        >
+      </li>
       <hr />
       <li>
         <router-link to="/companies">Listar Empresas</router-link>
@@ -29,6 +34,9 @@
         <router-link to="/work-frequencies"
           >Listar Frequências de Trabalho</router-link
         >
+      </li>
+      <li>
+        <router-link to="/task-performed">Listar tarefas</router-link>
       </li>
     </ul>
   </div>
