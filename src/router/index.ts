@@ -9,6 +9,7 @@ import TaskCategoryList from "../views/TaskCategoryList.vue"; // Importe a nova 
 import WorkFrequencyList from "../views/WorkFrequencyList.vue"; // Importe a nova view
 import EditCompany from "../views/EditCompany.vue";
 import EditTaskCategory from "../views/EditTaskCategory.vue";
+import EditWorkFrequency from "../views/EditWorkFrequency.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -55,6 +56,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/tasks_categories/edit/:id", // :id será o UUID da empresa
     name: "EditTaskCategory",
     component: EditTaskCategory,
+  },
+  {
+    path: "/work-frequencies/edit/:id", // :id será o UUID da empresa
+    name: "EditWorkFrequency",
+    component: EditWorkFrequency,
   },
 ];
 
