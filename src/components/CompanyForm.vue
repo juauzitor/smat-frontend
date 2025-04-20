@@ -60,7 +60,7 @@ const submitForm = async () => {
 
     responseMessage.value = `Empresa "${
       companyName.value
-    }" cadastrada com sucesso! ID: ${response.data.id || "N/A"}`;
+    }" cadastrada com sucesso! ID: ${response.data.companyId || "N/A"}`;
     responseSuccess.value = true;
     companyName.value = "";
   } catch (error: any) {
