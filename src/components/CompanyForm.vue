@@ -33,7 +33,7 @@ const submitForm = async () => {
       companyName.value
     }" enviada com sucesso! ID: ${response.data.id || "N/A"}`;
     companyName.value = ""; // Limpa o formulário
-  } catch (error: Error) {
+  } catch (error: any) {
     responseMessage.value = `Erro ao enviar a empresa: ${
       error.message || "Erro desconhecido"
     }`;

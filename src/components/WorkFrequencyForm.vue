@@ -63,7 +63,7 @@ const submitForm = async () => {
     work_frequency_id.value = null;
     start_work_frequency.value = "";
     end_work_frequency.value = "";
-  } catch (error: Error) {
+  } catch (error: any) {
     responseMessage.value = `Erro ao enviar a frequência de trabalho: ${
       error.message || "Erro desconhecido"
     }`;

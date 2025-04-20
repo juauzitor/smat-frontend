@@ -36,7 +36,7 @@ const submitForm = async () => {
       categoryName.value
     }" enviada com sucesso! ID: ${response.data.id || "N/A"}`;
     categoryName.value = ""; // Limpa o formulário
-  } catch (error: Error) {
+  } catch (error: any) {
     responseMessage.value = `Erro ao enviar a categoria: ${
       error.message || "Erro desconhecido"
     }`;

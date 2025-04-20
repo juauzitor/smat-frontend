@@ -32,7 +32,7 @@ onMounted(async () => {
   try {
     const response = await axios.get("http://localhost:8080/api/companies");
     companies.value = response.data;
-  } catch (error: Error) {
+  } catch (error: any) {
     console.error("Erro ao buscar empresas:", error);
   } finally {
     loading.value = false;
