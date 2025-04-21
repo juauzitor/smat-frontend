@@ -8,7 +8,7 @@
     <form @submit.prevent="submitForm" class="form-content">
       <div class="input-group">
         <label for="categoryName" class="input-label">
-          <span class="label-icon">📚</span>
+          <span class="label-icon">📂</span>
           Nome da Categoria:
         </label>
         <input
